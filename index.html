@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>ux_edits</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!--
+      Need a visual blank slate?
+      Remove all code in `styles.css`!
+    -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/androidstudio.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+  </head>
+
+  <body>
+
+    <main>
+      <pre><code class="language-css">
+
+        /*
+        bs5.0.2_sitemap_dark
+        
+        ---------------
+        update in SCRUM
+        ---------------
+        
+        storefront > categories
+        
+        |
+        |
+        |
+        |
+        |
+        |
+        |
+        |
+        
+        ---------------
+        TEST > SHOPPING UX PATH
+        ---------------
+        
+        ---
+        MOBILE SHOPPING UX
+        ---
+        
+        OK
+        
+        ---
+        TABLET SHOPPING UX
+        ---
+        
+        OK
+        
+        ---
+        DESKTOP SHOPPING UX
+        ---
+        
+        OK
+        
+        |
+        |
+        |
+        |
+        |
+        |
+        |
+        |
+        
+        ---------------
+        SHOPPING UX PATH
+        ---------------
+        
+        'OK' = no edits
+        'DONE' = edits done
+        
+        1
+        ----
+        SFNT, active page: https://peakdentalstore.com/storefront.html
+        ----
+        
+        OK
+        
+        2
+        ----
+        CTGY, active page: https://peakdentalstore.com/category-display.html
+        ----
+        
+        edit: widen full page vertically (esp with no content after order, white space below footer)
+        
+        edit location: user interface > templates > category display (CTGY) > details
+        
+        DONE (DESKTOP, TABLET, MOBILE)
+        
+        3
+        ----
+        CTGY, active page: https://peakdentalstore.com/category-1.html
+        ----
+        
+        edit: font control for title, border for img + img control, padding for content (IMG + TEXT) hugging left
+        
+        edit location: user interface > templates > category display (CTGY) > details
+        
+        DONE (DESKTOP, TABLET, MOBILE)
+        
+        4
+        ----
+        PROD, https://peakdentalstore.com/test-product.html
+        ----
+        
+        OK
+        
+        5
+        ----
+        BASK, https://peakdentalstore.com/basket-contents.html
+        ----
+        
+        edit: widen full page vertically (esp with no content after order, white space below footer AND WHITE SPACE TO LEFT AND RIGHT OF FOOTER)
+        
+        edit location: user interface > templates > basket contents (BASK) > details
+        
+        DONE (DESKTOP, TABLET, MOBILE)
+        
+        6
+        ----
+        OCST, active page: https://peakdentalstore.com/checkout.html (both this and below, making this an iframe), but actual page is checkout: customer information, or OCST > https://peakdentalstore.com/checkout-customer-information.html
+        ----
+        
+        edit: widen full page vertically (esp with no content after order, white space below footer), full footer missing, input fields touching left edge in MOBILE
+        
+        edit location: user interface > templates > checkout: customer information (OCST) > details
+        
+        DONE (DESKTOP, TABLET, MOBILE)
+        
+        7
+        ----
+        OSEL, active page: https://peakdentalstore.com/checkout-special-offers.html (both this and below, making this an iframe), but actual page is checkout: shopping/payment selection, or OSEL > https://peakdentalstore.com/checkout-shippingpayment-selection.html
+        ----
+        
+        edit: full footer missing (DESKTOP, TABLET, MOBILE)
+        
+        edit location: user interface > templates > checkout: shopping/payment selection (OSEL) > details
+        
+        LOOK FOR THESE TAGS TO IDENTIFY ACTUAL PAGE:
+        <body id="js-OSEL" class="mm_runtimeshopascustomer_bottom_left mm_runtimeshopascustomer_present o-site-wrapper t-page-osel">
+        <title>peakdentalstore: Checkout: Shipping/Payment Selection</title>
+        
+        DONE (DESKTOP, TABLET, MOBILE)
+        
+        8
+        ----
+        OPAY, active page: https://peakdentalstore.com/checkout-payment-information.html
+        ----
+        
+        edit: full footer missing (DESKTOP, TABLET, MOBILE)
+        
+        edit location: user interface > templates > checkout: payment information (OPAY) > details
+        
+        DONE (DESKTOP, TABLET, MOBILE)
+        
+        9
+        ----
+        INVC, active page: https://peakdentalstore.com/invoice.html
+        ----
+        
+        OK
+        
+        |
+        |
+        
+        ---------------
+        SHOPPING UX PATH, CODE EDITS
+        ---------------
+        
+        ----
+        SFTN
+        ----
+        
+        OK
+        
+        ----
+        CTGY
+        ----
+        */
+        
+        /* UX PATH #2 .. disables white space under footer (lack of content) .. DESKTOP, TABLET, MOBILE */
+        .o-layout--wide {
+          min-height: 30vh !important;
+        }
+        /* location: https://peakdentalstore.com/category-display.html, MIVA CSS > line 757-759, ref: https://peakdentalstore.com/mm5/json.mvc?Store_Code=PEAK&Function=CSSCombinedResource_Output&CSSCombinedResource_Code=stylesheet&T=4f0a39f7 */
+        
+        /* UX PATH #3 .. font control for title 'category 1' .. DESKTOP, TABLET, MOBILE */
+        .c-heading-charlie {
+          font-size: var(--title-one);
+          font-weight: var(--font-bold);
+          line-height: calc(var(--title-one) * 3) !important; /* was * 1.2 */
+          color: #495057 !important;
+        }
+        /* location: https://peakdentalstore.com/category-1.html, MIVA CSS > line 2250-2254, ref: https://peakdentalstore.com/mm5/json.mvc?Store_Code=PEAK&Function=CSSCombinedResource_Output&CSSCombinedResource_Code=stylesheet&T=4f0a39f7 */
+        
+        /* UX PATH #3 .. border and w, h control for category images .. DESKTOP */
+        @media screen and (min-width: 769px) {
+          picture img {
+            border: 12px solid #edebeb !important;
+            padding: 0px;
+            border-radius: 20px;
+            max-height: 400px !important; /* is only form images .. must do img container actually */
+            max-width: 95% !important; /* hugging left and right too much, cutting off borders .. */
+            /* display: none !important; */
+            background: #ffffff !important; /* FIXES LEFT RIGHT GAP */
+          }
+        }
+        /* UX PATH #3 .. border and w, h control for category images .. TABLET */
+        @media screen and (max-width: 768px) {
+          picture img {
+            border: 12px solid #edebeb !important;
+            padding: 0px;
+            border-radius: 20px;
+            max-height: 95% !important; /* is only form images .. must do img container actually */
+            max-width: 95% !important; /* hugging left and right too much, cutting off borders .. */
+            /* display: none !important; */
+            background: #ffffff !important; /* FIXES LEFT RIGHT GAP */
+          }
+        }
+        /* UX PATH #3 .. border and w, h control for category images .. MOBILE */
+        @media screen and (max-width: 768px) {
+          picture img {
+            border: 12px solid #edebeb !important;
+            padding: 0px;
+            border-radius: 20px;
+            max-height: 95% !important; /* is only form images .. must do img container actually */
+            max-width: 95% !important; /* hugging left and right too much, cutting off borders .. */
+            /* display: none !important; */
+            background: #ffffff !important; /* FIXES LEFT RIGHT GAP */
+          }
+        }
+        /* location: https://peakdentalstore.com/category-1.html, LOCAL > line 149-175, ref: simple_navbar_bs5.0.2_iso_w/content[STACKBLITZ]_BXSIZ+MIVA+VAR.html */
+        
+        /* UX PATH #3 .. padding for product display IMG (under 'sub category 1' etc), parent class in div .. TABLET, MOBILE */
+        @media screen and (max-width: 768px) {
+          .x-product-list__item {
+            padding: 5% !important;
+          }
+        }
+        /* location: https://peakdentalstore.com/category-1.html, MIVA CSS > line 5229-5231, ref: https://peakdentalstore.com/mm5/json.mvc?Store_Code=PEAK&Function=CSSCombinedResource_Output&CSSCombinedResource_Code=stylesheet&T=4f0a39f7 */
+        
+        /* UX PATH #3 .. padding for product display TEXT, epand to ipad air (820px) .. TABLET, MOBILE */
+        @media screen and (max-width: 820px) {
+          .x-product-list__figure,
+          .x-product-list__figure-caption,
+          .x-subcategory-list__figure,
+          .x-subcategory-list__figure-caption {
+            padding-left: 5% !important;
+          }
+        }
+        /* location: https://peakdentalstore.com/category-1.html, MIVA CSS > line 5233-5240, ref: https://peakdentalstore.com/mm5/json.mvc?Store_Code=PEAK&Function=CSSCombinedResource_Output&CSSCombinedResource_Code=stylesheet&T=4f0a39f7 */
+        
+        /*
+        ----
+        PROD
+        ----
+        
+        OK
+        
+        ----
+        BASK
+        ----
+        */
+        
+        /* UX PATH #5 .. disables padding around footer .. then finishing by pushing footer to bottom with .x-messages */
+        .t-basket__product-contents {
+          margin-bottom: 0rem !important;
+          padding: 0rem !important;
+        }
+        /* location: https://peakdentalstore.com/basket-contents.html, MIVA CSS > line 7059-7065, ref: https://peakdentalstore.com/mm5/json.mvc?Store_Code=PEAK&Function=CSSCombinedResource_Output&CSSCombinedResource_Code=stylesheet&T=4f0a39f7 */
+        
+        div.x-messages {
+          margin: 2.25rem 4rem 40vh 4rem !important; /* was var(--default-spacing-unit); */
+        }
+        /* location: https://peakdentalstore.com/basket-contents.html, MIVA CSS > line 4937-4944, ref: https://peakdentalstore.com/mm5/json.mvc?Store_Code=PEAK&Function=CSSCombinedResource_Output&CSSCombinedResource_Code=stylesheet&T=4f0a39f7 */
+        
+        /*
+        ----
+        OCST
+        ----
+        */
+        
+        /* UX PATH #6 .. adjusted height already done in BSKE, which apparently covers this */
+        
+        /* UX PATH #6 .. left padding for MOBILE here also .. was 768px but this may have been affecting BASK so changed to 500px */
+        @media screen and (max-width: 500px) {
+          .t-basket__product-contents {
+          padding: 2.25rem 3rem;
+          }
+        }
+        /* location: https://peakdentalstore.com/checkout-customer-information.html MIVA CSS > line 759-765, ref: https://peakdentalstore.com/mm5/json.mvc?Store_Code=PEAK&Function=CSSCombinedResource_Output&CSSCombinedResource_Code=stylesheet&T=4f0a39f7 */
+        
+        /* miva logic wasn't posting footer (only copyright) so pasted in footer into user interface > templates > checkout: customer information (OCST) from BSKE source code */
+        
+        /*
+        ----
+        OSEL
+        ----
+        
+        <!-- note
+        UX PATH #7 .. miva logic wasn't posting footer (only copyright) so pasted in footer into user interface > templates > checkout: shipping/payment selection (OSEL) from BSKE source code
+        -->
+        
+        ----
+        OPAY
+        ----
+        
+        <!-- note
+        UX PATH #8 .. miva logic wasn't posting footer (only copyright) so pasted in footer into user interface > templates > checkout: payout information (OPAY) from BSKE source code
+        -->
+        
+        ----
+        INVC
+        ----
+        
+        OK
+        
+        |
+        |
+        |
+        |
+        |
+        |
+        |
+        |
+        
+        ---------------
+        SHOPPING UX PATH, SUB PAGES
+        ---------------
+        
+        10
+        ----
+        BSKE, active page: https://peakdentalstore.com/checkout-basket-empty.html (not in UX)
+        ----
+        
+        edit: widen full page vertically, esp with no content after order (white space below footer)
+        
+        edit location: user interface > templates > checkout: basket empty (BSKE) > details
+        
+        DONE (DESKTOP, TABLET, MOBILE)
+        
+        11
+        ----
+        OPRC, active page: https://peakdentalstore.com/order-already-processed.html (not in UX .. both this and below, making this an iframe), but actual page is invoice, or INVC > https://peakdentalstore.com//invoice.html
+        ----
+        
+        edit: widen full page vertically, esp with no content after order (white space below footer)
+        
+        edit location: user interface > templates > order already processed (OPRC) > details
+        
+        DONE (DESKTOP, TABLET, MOBILE)
+        
+        ADD: order already processed, footer white space
+        
+        |
+        |
+        
+        ---------------
+        SHOPPING UX PATH, SUB PAGES, CODE EDITS
+        ---------------
+        
+        ----
+        BSKE
+        ----
+        */
+        
+        /* UX PATH #9 .. disables white space under footer (lack of content), also somehow fixes same white space in OCST .. DESKTOP, TABLET, MOBILE */
+        .o-layout.t-basket__product-contents {
+          min-height: 50vh !important;
+        }
+        /* location: https://peakdentalstore.com/checkout-basket-empty.html, MIVA CSS > line 7059-7065, ref: https://peakdentalstore.com/mm5/json.mvc?Store_Code=PEAK&Function=CSSCombinedResource_Output&CSSCombinedResource_Code=stylesheet&T=4f0a39f7 */
+        
+        /*
+        ----
+        OPRC
+        ----
+        */
+        
+        /* UX PATH #10 .. disables white space under footer (lack of content) .. DESKTOP, TABLET, MOBILE */
+        .o-layout.o-layout--justify-center {
+          min-height: 50vh !important;
+        }
+        /* location: https://peakdentalstore.com//order-already-processed.html, MIVA CSS > line 933-935, ref: https://peakdentalstore.com/mm5/json.mvc?Store_Code=PEAK&Function=CSSCombinedResource_Output&CSSCombinedResource_Code=stylesheet&T=4f0a39f7 */
+        
+        /*
+        |
+        |
+        |
+        |
+        |
+        |
+        |
+        |
+        
+        ---------------
+        SITE MAP
+        ---------------
+        
+        ---
+        SHOPPING UX PATH
+        ---
+        
+        1
+        SFNT, active page: https://peakdentalstore.com/storefront.html
+        OK
+        
+        2
+        CTGY, active page: https://peakdentalstore.com/category-display.html
+        DONE
+        
+        3
+        CTGY, active page: https://peakdentalstore.com/category-1.html
+        DONE
+        
+        4
+        PROD, https://peakdentalstore.com/test-product.html
+        OK
+        
+        5
+        BASK, https://peakdentalstore.com/basket-contents.html
+        
+        6
+        OCST, active page: https://peakdentalstore.com/checkout.html (both this and below, making this an iframe), but actual page is checkout: customer information, or OCST > https://peakdentalstore.com/checkout-customer-information.html
+        
+        7
+        OSEL, active page: https://peakdentalstore.com/checkout-special-offers.html (both this and below, making this an iframe), but actual page is checkout: shopping/payment selection, or OSEL > https://peakdentalstore.com/checkout-shippingpayment-selection.html
+        
+        8
+        OPAY, active page: https://peakdentalstore.com/checkout-payment-information.html
+        
+        9
+        INVC, active page: https://peakdentalstore.com/invoice.html
+        
+        
+        |
+        |
+        
+        ---
+        SHOPPING UX PATH, SUB PAGES
+        ---
+        
+        1
+        BSKE, active page: https://peakdentalstore.com/checkout-basket-empty.html (not in UX until after purchase is made)
+        
+        2
+        OPRC, active page: https://peakdentalstore.com/invoice.html (not in UX until after purchase is made)
+        
+        |
+        |
+        
+        ---
+        SHOPPING UX PATH, OPTIONAL PAGES
+        ---
+        
+        1
+        category 1
+        https://peakdentalstore.com/category-1.html
+        DONE
+        
+        2
+        sub category 1
+        https://peakdentalstore.com/sub-category-1.html
+        
+        3
+        sub category 2
+        https://peakdentalstore.com/sub-category-2.html
+        
+        4
+        category 2
+        https://peakdentalstore.com/category-2.html
+        DONE
+        
+        5
+        sub category 3
+        https://peakdentalstore.com/sub-category-3.html
+        
+        6
+        sub category 4
+        https://peakdentalstore.com/sub-category-4.html
+        
+        7
+        category 3
+        https://peakdentalstore.com/category-3.html
+        
+        8
+        category 4
+        https://peakdentalstore.com/category-4.html
+        
+        9
+        sale
+        https://peakdentalstore.com/sale.html
+        
+        10
+        featured products
+        https://peakdentalstore.com/featured-products.html
+        
+        11
+        shipping & return policy
+        https://peakdentalstore.com/shipping-and-return-policy.html
+        
+        12
+        order summary > edit
+        https://peakdentalstore.com/basket-contents.html
+        
+        13
+        basket icon in header
+        https://peakdentalstore.com/basket-contents.html
+        
+        14
+        payment method > edit
+        https://peakdentalstore.com/checkout-shippingpayment-selection.html
+        
+        15
+        bill to > edit
+        https://peakdentalstore.com/checkout-customer-information.html
+        
+        16
+        ship to > edit - DUPLICATE (ABOVE)
+        https://peakdentalstore.com/checkout-customer-information.html
+        
+        17
+        shipping method > edit - DUPLICATE
+        https://peakdentalstore.com/checkout-shippingpayment-selection.html
+        
+        18
+        delivery notes > edit - DUPLICATE (ABOVE)
+        https://peakdentalstore.com/checkout-shippingpayment-selection.html
+        
+        |
+        |
+        
+        ---
+        HEADER MENU
+        ---
+        
+        1
+        category 1 - DUPLICATE (in SHOPPING UX PATH, OPTIONAL PAGES)
+        https://peakdentalstore.com/sub-category-1.html
+        
+        2
+        category 2 - DUPLICATE (in SHOPPING UX PATH, OPTIONAL PAGES)
+        https://peakdentalstore.com/sub-category-2.html
+        
+        3
+        category 3 - DUPLICATE (in SHOPPING UX PATH, OPTIONAL PAGES)
+        https://peakdentalstore.com/sub-category-3.html
+        
+        4
+        category 4 - DUPLICATE (in SHOPPING UX PATH, OPTIONAL PAGES)
+        https://peakdentalstore.com/sub-category-4.html
+        
+        |
+        |
+        
+        ---
+        FOOTER MENU
+        ---
+        
+        1
+        category 1 - DUPLICATE (in SHOPPING UX PATH, OPTIONAL PAGES)
+        https://peakdentalstore.com/sub-category-1.html
+        
+        2
+        category 2 - DUPLICATE (in SHOPPING UX PATH, OPTIONAL PAGES)
+        https://peakdentalstore.com/sub-category-2.html
+        
+        3
+        category 3 - DUPLICATE (in SHOPPING UX PATH, OPTIONAL PAGES)
+        https://peakdentalstore.com/sub-category-3.html
+        
+        4
+        category 4 - DUPLICATE (in SHOPPING UX PATH, OPTIONAL PAGES)
+        https://peakdentalstore.com/sub-category-4.html
+        
+        5
+        sale - DUPLICATE (in SHOPPING UX PATH, OPTIONAL PAGES)
+        https://peakdentalstore.com/sale.html
+        
+        6
+        featured products - DUPLICATE (in SHOPPING UX PATH, OPTIONAL PAGES)
+        https://peakdentalstore.com/featured-products.html
+        
+        7
+        about us
+        https://peakdentalstore.com/about-us.html
+        
+        8
+        account
+        https://peakdentalstore.com/customer-account.html
+        
+        9
+        contact us
+        https://peakdentalstore.com/contact-us.html
+        
+        10
+        faq
+        https://peakdentalstore.com/frequently-asked-questions.html
+        
+        11
+        order status
+        https://peakdentalstore.com/order-history-list.html
+        
+        12
+        wish lists
+        https://peakdentalstore.com/wish-lists.html
+        
+        13
+        privacy policy
+        https://peakdentalstore.com/privacy-policy.html
+        
+        14
+        shipping and returns - DUPLICATE (in SHOPPING UX PATH, OPTIONAL PAGES)
+        https://peakdentalstore.com/shipping-and-return-policy.html
+        
+        15
+        site map
+        https://peakdentalstore.com/site-map.html
+        
+        |
+        |
+        
+        ---
+        ACCOUNT
+        ---
+        
+        1
+        account
+        https://peakdentalstore.com/customer-account.html
+        
+        2
+        personal information > edit link
+        https://peakdentalstore.com/customer-edit.html
+        
+        3
+        personal information > change passwork link
+        https://peakdentalstore.com/change-password.html
+        
+        4
+        customer credit > manage link
+        https://peakdentalstore.com/customer-account-balance.html
+        
+        |
+        |
+        
+        ---
+        MY DASHBOARD
+        ---
+        
+        1
+        customer account > personal information > edit - DUPLICATE
+        https://peakdentalstore.com/customer-edit.html
+        
+        2
+        change email
+        https://peakdentalstore.com/change-email-address.html
+        
+        3
+        change password - DUPLICATE
+        https://peakdentalstore.com/change-password.html
+        
+        4
+        edit cards
+        https://peakdentalstore.com/customer-payment-cards.html
+        
+        5
+        add new card
+        https://peakdentalstore.com/customer-payment-card-add.html
+        
+        6
+        order history - DUPLICATE
+        https://peakdentalstore.com/order-history-list.html
+        
+        7
+        manage subscriptions
+        https://peakdentalstore.com/customer-subscriptions.html
+        
+        8
+        wish lists
+        https://peakdentalstore.com/wish-lists.html
+        
+        9
+        check your balance - DUPLICATE
+        https://peakdentalstore.com/customer-account-balance.html
+        
+        10
+        redeem gift certificates
+        https://peakdentalstore.com/redeem-gift-certificate.html
+        
+        11
+        edit addresses
+        https://peakdentalstore.com/customer-address-book.html
+        
+        12
+        add new adddresses
+        https://peakdentalstore.com/customer-address-add.html
+        
+        |
+        |
+        
+        ---------------
+        SITE MAP REDUCED, RAW
+        ---------------
+        
+        shopping ux path >
+        https://peakdentalstore.com/storefront.html
+        https://peakdentalstore.com/category-display.html
+        https://peakdentalstore.com/category-1.html
+        https://peakdentalstore.com/test-product.html
+        https://peakdentalstore.com/basket-contents.html
+        https://peakdentalstore.com/checkout.html
+        https://peakdentalstore.com/checkout-special-offers.html
+        https://peakdentalstore.com/checkout-payment-information.html
+        https://peakdentalstore.com/invoice.html
+        
+        shopping ux path, sub pages >
+        https://peakdentalstore.com/checkout-basket-empty.html
+        https://peakdentalstore.com/invoice.html
+        
+        shopping ux path, optional pages >
+        https://peakdentalstore.com/category-1.html
+        https://peakdentalstore.com/sub-category-1.html
+        https://peakdentalstore.com/sub-category-2.html
+        https://peakdentalstore.com/category-2.html
+        https://peakdentalstore.com/sub-category-3.html
+        https://peakdentalstore.com/sub-category-4.html
+        https://peakdentalstore.com/category-3.html
+        https://peakdentalstore.com/category-4.html
+        https://peakdentalstore.com/sale.html
+        https://peakdentalstore.com/featured-products.html
+        https://peakdentalstore.com/shipping-and-return-policy.html
+        https://peakdentalstore.com/basket-contents.html
+        https://peakdentalstore.com/basket-contents.html
+        https://peakdentalstore.com/checkout-shippingpayment-selection.html
+        https://peakdentalstore.com/checkout-customer-information.html
+        https://peakdentalstore.com/checkout-customer-information.html
+        https://peakdentalstore.com/checkout-shippingpayment-selection.html
+        https://peakdentalstore.com/checkout-shippingpayment-selection.html
+        
+        header >
+        https://peakdentalstore.com/category-1.html
+        https://peakdentalstore.com/category-2.html
+        https://peakdentalstore.com/category-3.html
+        https://peakdentalstore.com/category-4.html
+        
+        footer >
+        https://peakdentalstore.com/category-1.html
+        https://peakdentalstore.com/category-2.html
+        https://peakdentalstore.com/category-3.html
+        https://peakdentalstore.com/category-4.html
+        https://peakdentalstore.com/sale.html
+        https://peakdentalstore.com/featured-products.html
+        
+        https://peakdentalstore.com/about-us.html
+        https://peakdentalstore.com/customer-account.html
+        https://peakdentalstore.com/contact-us.html
+        https://peakdentalstore.com/frequently-asked-questions.html
+        https://peakdentalstore.com/order-history-list.html
+        https://peakdentalstore.com/wish-lists.html
+        
+        https://peakdentalstore.com/privacy-policy.html
+        https://peakdentalstore.com/shipping-and-return-policy.html
+        https://peakdentalstore.com/site-map.html
+        
+        account >
+        https://peakdentalstore.com/customer-account.html
+        https://peakdentalstore.com/customer-edit.html
+        https://peakdentalstore.com/change-password.html
+        https://peakdentalstore.com/customer-account-balance.html
+        
+        my dashboard >
+        https://peakdentalstore.com/customer-edit.html
+        https://peakdentalstore.com/change-email-address.html
+        https://peakdentalstore.com/change-password.html
+        https://peakdentalstore.com/customer-payment-cards.html
+        https://peakdentalstore.com/customer-payment-card-add.html
+        https://peakdentalstore.com/order-history-list.html
+        https://peakdentalstore.com/customer-subscriptions.html
+        https://peakdentalstore.com/wish-lists.html
+        https://peakdentalstore.com/customer-account-balance.html
+        https://peakdentalstore.com/redeem-gift-certificate.html
+        https://peakdentalstore.com/customer-address-book.html
+        https://peakdentalstore.com/customer-address-add.html
+        
+        |
+        |
+        
+        ---------------
+        SITE MAP REDUCED, COPIES ELIMINATED
+        ---------------
+        
+        shopping ux path >
+        https://peakdentalstore.com/storefront.html
+        https://peakdentalstore.com/category-display.html
+        https://peakdentalstore.com/category-1.html
+        https://peakdentalstore.com/test-product.html
+        https://peakdentalstore.com/basket-contents.html
+        https://peakdentalstore.com/checkout.html
+        https://peakdentalstore.com/checkout-special-offers.html
+        https://peakdentalstore.com/checkout-payment-information.html
+        https://peakdentalstore.com/invoice.html
+        
+        shopping ux path, sub pages >
+        https://peakdentalstore.com/checkout-basket-empty.html
+        
+        shopping ux path, optional pages >
+        https://peakdentalstore.com/category-2.html
+        https://peakdentalstore.com/category-3.html
+        https://peakdentalstore.com/category-4.html
+        https://peakdentalstore.com/sub-category-1.html
+        https://peakdentalstore.com/sub-category-2.html
+        https://peakdentalstore.com/sub-category-3.html
+        https://peakdentalstore.com/sub-category-4.html
+        https://peakdentalstore.com/sale.html
+        https://peakdentalstore.com/featured-products.html
+        https://peakdentalstore.com/shipping-and-return-policy.html
+        https://peakdentalstore.com/checkout-shippingpayment-selection.html
+        https://peakdentalstore.com/checkout-customer-information.html
+        
+        header >
+        
+        footer >
+        https://peakdentalstore.com/about-us.html
+        https://peakdentalstore.com/customer-account.html
+        https://peakdentalstore.com/contact-us.html
+        https://peakdentalstore.com/frequently-asked-questions.html
+        https://peakdentalstore.com/order-history-list.html
+        https://peakdentalstore.com/wish-lists.html
+        https://peakdentalstore.com/privacy-policy.html
+        https://peakdentalstore.com/site-map.html
+        
+        account >
+        https://peakdentalstore.com/customer-edit.html
+        https://peakdentalstore.com/change-password.html
+        https://peakdentalstore.com/customer-account-balance.html
+        
+        my dashboard >
+        https://peakdentalstore.com/change-email-address.html
+        https://peakdentalstore.com/customer-payment-cards.html
+        https://peakdentalstore.com/customer-payment-card-add.html
+        https://peakdentalstore.com/customer-subscriptions.html
+        https://peakdentalstore.com/redeem-gift-certificate.html
+        https://peakdentalstore.com/customer-address-book.html
+        https://peakdentalstore.com/customer-address-add.html
+        
+        |
+        |
+        
+        ---------------
+        SITE MAP ALPHABETIZED, COPIES ELIMINATED
+        ---------------
+        
+        https://peakdentalstore.com/about-us.html
+        https://peakdentalstore.com/basket-contents.html
+        https://peakdentalstore.com/category-1.html
+        https://peakdentalstore.com/category-2.html
+        https://peakdentalstore.com/category-3.html
+        https://peakdentalstore.com/category-4.html
+        https://peakdentalstore.com/category-display.html
+        https://peakdentalstore.com/change-email-address.html
+        https://peakdentalstore.com/change-password.html
+        https://peakdentalstore.com/checkout-basket-empty.html
+        https://peakdentalstore.com/checkout-customer-information.html
+        https://peakdentalstore.com/checkout-payment-information.html
+        https://peakdentalstore.com/checkout-shippingpayment-selection.html
+        https://peakdentalstore.com/checkout-special-offers.html
+        https://peakdentalstore.com/checkout.html
+        https://peakdentalstore.com/contact-us.html
+        https://peakdentalstore.com/customer-account-balance.html
+        https://peakdentalstore.com/customer-account.html
+        https://peakdentalstore.com/customer-address-add.html
+        https://peakdentalstore.com/customer-address-book.html
+        https://peakdentalstore.com/customer-edit.html
+        https://peakdentalstore.com/customer-payment-card-add.html
+        https://peakdentalstore.com/customer-payment-cards.html
+        https://peakdentalstore.com/customer-subscriptions.html
+        https://peakdentalstore.com/featured-products.html
+        https://peakdentalstore.com/frequently-asked-questions.html
+        https://peakdentalstore.com/invoice.html
+        https://peakdentalstore.com/order-history-list.html
+        https://peakdentalstore.com/privacy-policy.html
+        https://peakdentalstore.com/redeem-gift-certificate.html
+        https://peakdentalstore.com/sale.html
+        https://peakdentalstore.com/shipping-and-return-policy.html
+        https://peakdentalstore.com/site-map.html
+        https://peakdentalstore.com/storefront.html
+        https://peakdentalstore.com/sub-category-1.html
+        https://peakdentalstore.com/sub-category-2.html
+        https://peakdentalstore.com/sub-category-3.html
+        https://peakdentalstore.com/sub-category-4.html
+        https://peakdentalstore.com/test-product.html
+        https://peakdentalstore.com/wish-lists.html
+        
+        |
+        |
+        |
+        |
+        |
+        |
+        |
+        |
+        
+        ---------------
+        SMAP CODE
+        ---------------
+        
+        1
+        user interface > templates > SMAP > details
+        
+        <mvt:item name="html_profile" />
+        <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <base href="&mvt:global:basehref;">
+          <mvt:if expr="NOT ISNULL l.settings:page:title">
+            <title>&mvt:page:title;</title>
+          <mvt:else>
+            <title>&mvt:store:name;: &mvt:page:name;</title>
+          </mvt:if>
+          <mvt:item name="head" param="css_list" />
+          <mvt:item name="head" param="head_tag" />
+        </head>
+        <body id="js-&mvte:page:code;" class="o-site-wrapper t-page-&mvte:global:pageClass;">
+          <mvt:item name="hdft" param="global_header" />
+        
+          <section class="o-layout">
+            <div class="o-layout__item">
+              <h1 class="c-heading-delta">&mvt:page:name;</h1>
+              <hr class="c-keyline">
+            </div>
+          </section>
+          
+          <section class="o-layout">
+            <div class="o-layout__item">
+              <mvt:item name="hdft" param="header" />
+            </div>
+          </section>
+        
+          <section class="o-layout">
+            <div class="o-layout__item">
+              <!-- CONTENT HERE .. bs5.0.2_sitemap_dark can ge here -->
+              <mvt:item name="sitemap" />
+            </div>
+          </section>
+          
+          <section class="o-layout">
+            <div class="o-layout__item">
+              <mvt:item name="hdft" param="footer" />
+            </div>
+          </section>
+        
+          <mvt:item name="hdft" param="global_footer" />
+        </body>
+        </html>
+        
+        2
+        user interface > templates > SMAP > site map
+        
+        <div id="sitemap">
+          <mvt:if expr="l.settings:category_count GT 0">
+          <h2>Categories:</h2>
+          <mvt:foreach iterator="category" array="categories">
+          <mvt:if expr="(pos1 MOD 3) EQ 1">
+          <div class="clear"></div>
+          </mvt:if>
+          <div class="category">
+            <div class="padding">
+            <a href="&mvt:category:link;">&mvt:category:name;</a>
+            </div>
+          </div>
+          </mvt:foreach>
+          <div class="clear"></div>
+          </mvt:if>
+        
+          <mvt:if expr="l.settings:product_count GT 0">
+          <h2>Products:</h2>
+          <mvt:foreach iterator="product" array="products">
+          <mvt:if expr="(pos1 MOD 3) EQ 1">
+            <div class="clear"></div>
+          </mvt:if>
+          <div class="product">
+            <div class="padding">
+            <a href="&mvt:product:link;">&mvt:product:name;</a>
+            </div>
+          </div>
+          </mvt:foreach>
+          <div class="clear"></div>
+          </mvt:if>
+        </div>
+        
+        */
+        
+        </code></pre>
+        
+    </main>
+
+  </body>
+
+</html>
