@@ -23,9 +23,18 @@
         border-radius: 6px;
       }
       
+      /* white space enforces line wrap, but word-wrap essential for long strings of text warpping in tablet, mobile */
+      code {
+        white-space: pre-line !important;
+        word-wrap: break-word !important;
+      }
+      /* fixes top and bottom black space where body background not filling */
       pre {
-        margin: 0px !important; /* was margin: 1em 0px in highlightjs css */
-        padding: 0px !important;
+        margin: 0px !important;
+      }
+      /* fixes horizontal scroll in tablet, mobile but cuts text off */
+      pre code.hljs {
+        /* overflow-x: hidden !important; */
       }
     </style>
 
@@ -38,7 +47,7 @@
   <body>
 
     <main>
-      <pre><code class="language-css" style="white-space: pre-line !important;">
+      <pre><code class="language-css">
 
         /*
         bs5.0.2_sitemap_dark
