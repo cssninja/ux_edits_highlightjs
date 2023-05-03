@@ -11,19 +11,21 @@
     <style>
       body {
         height: 102% !important;
-        width: 100% !important;
+        /* don't use, causes horizontal scroll */
+        /* width: 100% !important; */
         background: #242629;
         font-size: 1.1em;
         /* word-wrap: break-word; */
         /* white-space: pre-line !important; */
         padding: 0px;
         margin: 0px;
-        border:30px solid #3C4249;
+        border:20px solid #3C4249;
         border-radius: 6px;
       }
       
       pre {
-        /* can code this too */
+        margin: 0px !important; /* was margin: 1em 0px in highlightjs css */
+        padding: 0px !important;
       }
     </style>
 
