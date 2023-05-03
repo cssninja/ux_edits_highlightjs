@@ -6,13 +6,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
 
-    <!-- notes .. thanks to: https://highlightjs.org/ -->
+    <!-- notes .. thanks to: https://highlightjs.org/ .. https://highlightjs.org/usage/ discusses using white-space: pre; for wrapping text, defined here: https://developer.mozilla.org/en-US/docs/Web/CSS/white-space .. turns out pre-line is BEST and only works in the pre or code tags -->
  
     <style>
       body {
         background: #242629;
         font-size: 1.1em;
-        word-wrap: break-word; /* find in https://highlightjs.org/ if possible */
+        /* word-wrap: break-word; */
+        /* white-space: pre-line !important; */
       }
     </style>
 
@@ -24,7 +25,7 @@
   <body>
 
     <main>
-      <pre><code class="language-css">
+      <pre><code class="language-css" style="white-space: pre-line !important;">
 
         /*
         bs5.0.2_sitemap_dark
@@ -918,92 +919,10 @@
         
         1
         user interface > templates > SMAP > details
-        
-        <mvt:item name="html_profile" />
-        <head>
-          <meta charset="utf-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-          <base href="&mvt:global:basehref;">
-          <mvt:if expr="NOT ISNULL l.settings:page:title">
-            <title>&mvt:page:title;</title>
-          <mvt:else>
-            <title>&mvt:store:name;: &mvt:page:name;</title>
-          </mvt:if>
-          <mvt:item name="head" param="css_list" />
-          <mvt:item name="head" param="head_tag" />
-        </head>
-        <body id="js-&mvte:page:code;" class="o-site-wrapper t-page-&mvte:global:pageClass;">
-          <mvt:item name="hdft" param="global_header" />
-        
-          <section class="o-layout">
-            <div class="o-layout__item">
-              <h1 class="c-heading-delta">&mvt:page:name;</h1>
-              <hr class="c-keyline">
-            </div>
-          </section>
-          
-          <section class="o-layout">
-            <div class="o-layout__item">
-              <mvt:item name="hdft" param="header" />
-            </div>
-          </section>
-        
-          <section class="o-layout">
-            <div class="o-layout__item">
-              <!-- CONTENT HERE .. bs5.0.2_sitemap_dark can ge here -->
-              <mvt:item name="sitemap" />
-            </div>
-          </section>
-          
-          <section class="o-layout">
-            <div class="o-layout__item">
-              <mvt:item name="hdft" param="footer" />
-            </div>
-          </section>
-        
-          <mvt:item name="hdft" param="global_footer" />
-        </body>
-        </html>
-        
-        2
-        user interface > templates > SMAP > site map
-        
-        <div id="sitemap">
-          <mvt:if expr="l.settings:category_count GT 0">
-          <h2>Categories:</h2>
-          <mvt:foreach iterator="category" array="categories">
-          <mvt:if expr="(pos1 MOD 3) EQ 1">
-          <div class="clear"></div>
-          </mvt:if>
-          <div class="category">
-            <div class="padding">
-            <a href="&mvt:category:link;">&mvt:category:name;</a>
-            </div>
-          </div>
-          </mvt:foreach>
-          <div class="clear"></div>
-          </mvt:if>
-        
-          <mvt:if expr="l.settings:product_count GT 0">
-          <h2>Products:</h2>
-          <mvt:foreach iterator="product" array="products">
-          <mvt:if expr="(pos1 MOD 3) EQ 1">
-            <div class="clear"></div>
-          </mvt:if>
-          <div class="product">
-            <div class="padding">
-            <a href="&mvt:product:link;">&mvt:product:name;</a>
-            </div>
-          </div>
-          </mvt:foreach>
-          <div class="clear"></div>
-          </mvt:if>
-        </div>
-        
+
         */
         
         </code></pre>
-        
     </main>
 
   </body>
