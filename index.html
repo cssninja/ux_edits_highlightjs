@@ -71,8 +71,10 @@
       <!-- changing language to html lightens text color a bit .. css, html, xml all work -->
       <pre><code class="language-css">
         /*
-        bs5.0.2_sitemap_dark<br />
-        (updated: may 7 9:23)
+        bs5.0.2_sitemap_dark */
+        <br />
+
+        /* (updated: may 7 9:32)
         
         ---------------
         update in SCRUM
@@ -195,8 +197,8 @@
         edit location: user interface > templates > checkout: shopping/payment selection (OSEL) > details
         
         LOOK FOR THESE TAGS TO IDENTIFY ACTUAL PAGE:
-        <body id="js-OSEL" class="mm_runtimeshopascustomer_bottom_left mm_runtimeshopascustomer_present o-site-wrapper t-page-osel">
-        <title>peakdentalstore: Checkout: Shipping/Payment Selection</title>
+        <!-- <body id="js-OSEL" class="mm_runtimeshopascustomer_bottom_left mm_runtimeshopascustomer_present o-site-wrapper t-page-osel"> -->
+        <!-- <title>peakdentalstore: Checkout: Shipping/Payment Selection</title> -->
         
         DONE (DESKTOP, TABLET, MOBILE)
         
@@ -652,7 +654,13 @@
         ---------------
         FOOTER
         ---------------
+        */
 
+        </code></pre>
+        <div id="acln" class="anchorspace"></div>
+        <pre><code class="language-css">
+
+        /*
         ----
         ACLN
         ----
@@ -660,22 +668,22 @@
 
         /*
         ACLN INLINE (no media queries needed)
+        */
 
         <!-- SURGICAL PADDING BETTER THAN WHOLE PAGE PADDING (except line 36 and that whole section) .. using style="padding:2% !important;" or some variation .. line 145 -->
 
         <!-- / / / / customer account, log out padding .. line 150, now 151 -->
-        <h1 class="c-heading-delta o-layout--justify-between o-layout--wrap u-flex" style="padding:2% 2% 0% 2% !important;">
+        <!-- <h1 class="c-heading-delta o-layout--justify-between o-layout--wrap u-flex" style="padding:2% 2% 0% 2% !important;"> -->
 
         <!-- / / / / parent div from personal information to footer .. line 166, now 168 -->
-        <div class="o-layout__item u-width-12 u-width-9--l" style="min-width:100% !important;padding:0% 2% 0% 2% !important;">
+        <!-- <div class="o-layout__item u-width-12 u-width-9--l" style="min-width:100% !important;padding:0% 2% 0% 2% !important;"> -->
 
         <!-- / / / / personal information block .. line 168, now 172 -->
         <!-- max-width below overrides u-width-6--m which has max-width:50% .. doing just for divider line -->
-        <div class="o-layout__item u-width-12 u-width-6--m" style="max-width:100% !important;">
+        <!-- <div class="o-layout__item u-width-12 u-width-6--m" style="max-width:100% !important;"> -->
 
         <!-- / / / / name, email, password block within personal information .. line 248, now 252 -->
-        <div class="o-layout__item u-width-12 t-account-landing-section__content" style="padding: 0% 1% 0% 4% !important;">
-        */
+        <!-- <div class="o-layout__item u-width-12 t-account-landing-section__content" style="padding: 0% 1% 0% 4% !important;"> -->
         
         /* update: disables TOO MUCH stuff elsewhere (tables) .. original: disables the unintentional addition of pseudo element content in tables in file: order history list layout .. .td HAS to touch .nopsel like this: td.nopsel:before */
         td.nopsel:before {
